@@ -1,0 +1,14 @@
+@use "./colors" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $background;
+  color: $color;
+}
