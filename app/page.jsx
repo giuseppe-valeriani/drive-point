@@ -1,12 +1,19 @@
 import React from "react";
-import "./app.scss";
+import Link from "next/link";
+import "./Home.scss";
 import PupilsList from "@components/PupilsList/PupilsList";
+import AddPupil from "@components/AddPupil/AddPupil";
 
 const Home = () => {
   return (
     <main>
-      <h1 className="app__header">drive point</h1>
-      <PupilsList />
+      <h1 className="home__header">drive point</h1>
+      <div className="home__main">
+        <PupilsList />
+        <Link href="/pupils/add">
+          <AddPupil />
+        </Link>
+      </div>
     </main>
   );
 };

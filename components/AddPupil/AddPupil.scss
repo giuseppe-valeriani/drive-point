@@ -1,0 +1,8 @@
+@use "../../styles/colors" as *;
+@use "../../styles/mixins" as *;
+
+.add-pupil {
+  &__button {
+    @include button;
+  }
+}
