@@ -1,17 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import "./Form.scss";
 
-const Form = ({ handleSubmit }) => {
+const emptyForm = { name: "", starting_date: "" };
+
+const Form = ({ formData }) => {
+  const [data, setData] = useState(emptyForm);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!data.name || !data.value) {
+      return;
+    }
+    setError(false);
+    formData(data);
+  };
+
+  const handleNameChange = (e) => {
+    setData({ ...data, name: e.target.value });
+  };
+
+  const handleDateChange = (e) => {
+    const dataFormatted = e.target.value.split("-").reverse().join("/");
+    setData({ ...data, starting_date: dataFormatted });
+  };
+
   return (
     <form onSubmit={handleSubmit} className="form">
       <div className="form__field">
         <label htmlFor="name">Name</label>
-        <input className="form__input" id="name" type="text" name="name" />
+        <input
+          onChange={handleNameChange}
+          className="form__input"
+          id="name"
+          type="text"
+          name="name"
+        />
       </div>
       <div className="form__field">
         <label htmlFor="starting_date">Starting Date</label>
         <input
+          onChange={handleDateChange}
           className="form__input"
           id="starting_date"
           type="date"

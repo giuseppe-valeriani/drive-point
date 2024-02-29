@@ -14,10 +14,8 @@ const emptyForm = {
 const AddPupilPage = () => {
   const [newPupil, setNewPupil] = useState(emptyForm);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.starting_date.value);
+  const formData = (data) => {
+    console.log(data);
   };
 
   return (
@@ -29,7 +27,7 @@ const AddPupilPage = () => {
         <h1 className="add-pupil-page__title">add new pupil</h1>
       </section>
       <section>
-        <Form handleSubmit={handleSubmit} />
+        <Form formData={formData} />
       </section>
     </main>
   );
