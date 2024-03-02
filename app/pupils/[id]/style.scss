@@ -4,6 +4,12 @@
     text-align: center;
   }
 
+  &__subtitle {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
   &__skill {
     width: 100%;
     margin: auto;

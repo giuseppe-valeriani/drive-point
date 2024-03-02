@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, startTransition } from "react";
 import axios from "axios";
 import "./style.scss";
 
@@ -26,6 +26,7 @@ const Pupil = ({ params }) => {
   return (
     <section className="pupil">
       <h1 className="pupil__title">{pupil.name}</h1>
+      <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
       <article>
         <div className="pupil__skill">
           <span className="pupil__label">Introduction 1</span>
@@ -49,6 +50,30 @@ const Pupil = ({ params }) => {
           <span className="pupil__label">Turning Left 2</span>
           <span className="pupil__value">
             {definedValue[pupil.turn_left_2]}
+          </span>
+        </div>
+        <div className="pupil__skill">
+          <span className="pupil__label">Turning Right 1</span>
+          <span className="pupil__value">
+            {definedValue[pupil.turn_right_1]}
+          </span>
+        </div>
+        <div className="pupil__skill">
+          <span className="pupil__label">Turning Right 2</span>
+          <span className="pupil__value">
+            {definedValue[pupil.turn_right_2]}
+          </span>
+        </div>
+        <div className="pupil__skill">
+          <span className="pupil__label">Hill Starts 1</span>
+          <span className="pupil__value">
+            {definedValue[pupil.hill_starts_1]}
+          </span>
+        </div>
+        <div className="pupil__skill">
+          <span className="pupil__label">Hill Starts 2</span>
+          <span className="pupil__value">
+            {definedValue[pupil.hill_starts_2]}
           </span>
         </div>
       </article>
