@@ -1,19 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import "./style.scss";
 import Form from "@components/Form/Form";
 
-const emptyForm = {
-  name: "",
-  starting_date: "",
-};
-
 const AddPupilPage = () => {
-  const [newPupil, setNewPupil] = useState(emptyForm);
   const router = useRouter();
 
   const addPupil = async (pupil) => {

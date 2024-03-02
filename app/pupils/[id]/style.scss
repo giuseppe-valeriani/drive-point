@@ -1,0 +1,22 @@
+.pupil {
+  &__title {
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  &__skill {
+    width: 100%;
+    margin: auto;
+    max-width: 30rem;
+    display: flex;
+    padding: 1rem 2rem;
+  }
+
+  &__label {
+    width: 50%;
+  }
+
+  &__value {
+    width: 50%;
+  }
+}

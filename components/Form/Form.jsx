@@ -5,27 +5,27 @@ import "./Form.scss";
 const emptyForm = { name: "", starting_date: "" };
 
 const Form = ({ formData }) => {
-  const [data, setData] = useState(emptyForm);
+  const [pupil, setPupil] = useState(emptyForm);
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!data.name || !data.starting_date) {
+    if (!pupil.name || !pupil.starting_date) {
       setError(true);
       return;
     }
     setError(false);
-    formData(data);
-    setData(emptyForm);
+    formData(pupil);
+    setPupil(emptyForm);
   };
 
   const handleNameChange = (e) => {
-    setData({ ...data, name: e.target.value });
+    setPupil({ ...pupil, name: e.target.value });
   };
 
   const handleDateChange = (e) => {
     const dataFormatted = e.target.value.split("-").reverse().join("/");
-    setData({ ...data, starting_date: dataFormatted });
+    setPupil({ ...pupil, starting_date: dataFormatted });
   };
 
   return (
