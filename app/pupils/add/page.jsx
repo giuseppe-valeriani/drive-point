@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import "./style.scss";
 import Form from "@components/Form/Form";
@@ -13,9 +14,15 @@ const emptyForm = {
 
 const AddPupilPage = () => {
   const [newPupil, setNewPupil] = useState(emptyForm);
+  const router = useRouter();
+
+  const addPupil = async (pupil) => {
+    await axios.post("http://localhost:7777/", pupil);
+  };
 
   const formData = (data) => {
-    console.log(data);
+    addPupil(data);
+    router.push("/");
   };
 
   return (

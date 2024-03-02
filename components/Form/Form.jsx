@@ -10,11 +10,13 @@ const Form = ({ formData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!data.name || !data.value) {
+    if (!data.name || !data.starting_date) {
+      setError(true);
       return;
     }
     setError(false);
     formData(data);
+    setData(emptyForm);
   };
 
   const handleNameChange = (e) => {
@@ -32,6 +34,7 @@ const Form = ({ formData }) => {
         <label htmlFor="name">Name</label>
         <input
           onChange={handleNameChange}
+          placeholder="Name Surname"
           className="form__input"
           id="name"
           type="text"
@@ -56,6 +59,7 @@ const Form = ({ formData }) => {
           <div className="form__button">cancel</div>
         </Link>
       </div>
+      {error && <div className="form__error">Invalid fields</div>}
     </form>
   );
 };

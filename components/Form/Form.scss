@@ -27,4 +27,9 @@
   &__button {
     @include button;
   }
+
+  &__error {
+    color: $error;
+    letter-spacing: 0.1rem;
+  }
 }
