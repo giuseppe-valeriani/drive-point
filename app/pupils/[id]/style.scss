@@ -1,3 +1,5 @@
+@use "../../../styles/colors" as *;
+
 .pupil {
   &__title {
     text-transform: capitalize;
@@ -11,18 +13,29 @@
   }
 
   &__skill {
+    background-color: $background-dark;
+    border-radius: 8px;
     width: 100%;
-    margin: auto;
     max-width: 30rem;
     display: flex;
+    margin: 0.4rem auto;
     padding: 1rem 2rem;
+    opacity: 0.7;
+    transition: 250ms;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__label {
+    text-align: center;
     width: 50%;
   }
 
   &__value {
+    text-align: center;
     width: 50%;
+    text-transform: capitalize;
   }
 }

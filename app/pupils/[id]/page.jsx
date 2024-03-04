@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, startTransition } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.scss";
 
@@ -9,11 +9,16 @@ const Pupil = ({ params }) => {
 
   const getPupil = async () => {
     const response = await axios.get(`http://localhost:7777/${params.id}`);
-    setPupil(response.data);
     console.log(response.data);
+    setPupil(response.data);
   };
 
-  const definedValue = ["not given", "introduced", "capable", "independent"];
+  const definedValue = [
+    "not yet given",
+    "introduced",
+    "capable",
+    "independent",
+  ];
 
   useEffect(() => {
     getPupil();
@@ -30,7 +35,7 @@ const Pupil = ({ params }) => {
       <article>
         <div className="pupil__skill">
           <span className="pupil__label">Introduction 1</span>
-          <span className="pupil__value">{definedValue[pupil.intro_1]}</span>
+          <span className="pupil__value">{definedValue[pupil[0].intro_1]}</span>
         </div>
         <div className="pupil__skill">
           <span className="pupil__label">Introduction 2</span>
