@@ -1,4 +1,4 @@
-@use "../../../styles/colors" as *;
+@use "@styles/colors" as *;
 
 .pupil {
   display: flex;
@@ -43,11 +43,5 @@
   &__label {
     text-align: center;
     width: 50%;
-  }
-
-  &__value {
-    text-align: center;
-    width: 50%;
-    text-transform: capitalize;
   }
 }

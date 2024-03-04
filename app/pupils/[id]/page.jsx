@@ -14,6 +14,20 @@ const Pupil = ({ params }) => {
     setPupil(response.data);
   };
 
+  const updatePupil = async (payload) => {
+    const response = await axios.patch(
+      `http://localhost:7777/${params.id}`,
+      payload
+    );
+    getPupil();
+  };
+
+  const update = (name, value) => {
+    let newSkill = new Object();
+    newSkill[name] = value;
+    updatePupil(newSkill);
+  };
+
   useEffect(() => {
     getPupil();
   }, []);
@@ -23,7 +37,7 @@ const Pupil = ({ params }) => {
   }
 
   return (
-    <>
+    <main>
       <section className="pupil">
         <Link className="pupil__icon-box" href="/">
           <img className="pupil__icon" src={"/icons/home.png"} />
@@ -35,43 +49,67 @@ const Pupil = ({ params }) => {
         <article>
           <div className="pupil__skill">
             <span className="pupil__label">Introduction 1</span>
-            <Skill skill={pupil.intro_1} />
+            <Skill update={update} skill={pupil.intro_1} name={`intro_1`} />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Introduction 2</span>
-            <Skill skill={pupil.intro_2} />
+            <Skill update={update} skill={pupil.intro_2} name={`intro_2`} />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Introduction 3</span>
-            <Skill skill={pupil.intro_3} />
+            <Skill update={update} skill={pupil.intro_3} name={`intro_3`} />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Turning Left 1</span>
-            <Skill skill={pupil.turn_left_1} />
+            <Skill
+              update={update}
+              skill={pupil.turn_left_1}
+              name={`turn_left_1`}
+            />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Turning Left 2</span>
-            <Skill skill={pupil.turn_left_2} />
+            <Skill
+              update={update}
+              skill={pupil.turn_left_2}
+              name={`turn_left_2`}
+            />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Turning Right 1</span>
-            <Skill skill={pupil.turn_right_1} />
+            <Skill
+              update={update}
+              skill={pupil.turn_right_1}
+              name={`turn_right_1`}
+            />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Turning Right 2</span>
-            <Skill skill={pupil.turn_right_2} />
+            <Skill
+              update={update}
+              skill={pupil.turn_right_2}
+              name={`turn_right_2`}
+            />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Hill Starts 1</span>
-            <Skill skill={pupil.hill_starts_1} />
+            <Skill
+              update={update}
+              skill={pupil.hill_starts_1}
+              name={`hill_starts_1`}
+            />
           </div>
           <div className="pupil__skill">
             <span className="pupil__label">Hill Starts 2</span>
-            <Skill skill={pupil.hill_starts_2} />
+            <Skill
+              update={update}
+              skill={pupil.hill_starts_2}
+              name={`hill_starts_2`}
+            />
           </div>
         </article>
       </section>
-    </>
+    </main>
   );
 };
 

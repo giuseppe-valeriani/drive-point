@@ -20,7 +20,7 @@ const Form = ({ formData }) => {
   };
 
   const handleNameChange = (e) => {
-    setPupil({ ...pupil, name: e.target.value });
+    setPupil({ ...pupil, name: e.target.value.trim().toLowerCase() });
   };
 
   const handleDateChange = (e) => {
