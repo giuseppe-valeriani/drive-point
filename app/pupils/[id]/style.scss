@@ -1,9 +1,21 @@
 @use "../../../styles/colors" as *;
 
 .pupil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__title {
     text-transform: capitalize;
     text-align: center;
+  }
+
+  &__icon-box {
+    margin-right: 2rem;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
   }
 
   &__subtitle {
