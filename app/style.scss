@@ -10,7 +10,11 @@
 
   &__main {
     display: flex;
-    align-items: baseline;
     justify-content: space-around;
+    align-items: baseline;
+  }
+
+  &__link {
+    display: inline-block;
   }
 }

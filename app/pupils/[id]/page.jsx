@@ -34,10 +34,13 @@ const Pupil = ({ params }) => {
   return (
     <main>
       <section className="pupil">
-        <Link className="pupil__icon-box" href="/">
-          <img className="pupil__icon" src={"/icons/home.png"} />
+        <Link href="/">
+          <img src={"/icons/home.png"} width={32} height={32} />
         </Link>
         <h1 className="pupil__title">{pupil.name}</h1>
+        <Link href={`/pupils/${params.id}/settings`}>
+          <img src={"/icons/settings.png"} width={32} height={32} />
+        </Link>
       </section>
       <section>
         <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>

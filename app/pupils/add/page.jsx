@@ -23,7 +23,7 @@ const AddPupilPage = () => {
     <main className="add-pupil-page">
       <section className="add-pupil-page__header">
         <Link className="add-pupil-page__icon-box" href="/">
-          <img className="add-pupil-page__icon" src={"/icons/home.png"} />
+          <img width={32} height={32} src={"/icons/home.png"} />
         </Link>
         <h1 className="add-pupil-page__title">add new pupil</h1>
       </section>

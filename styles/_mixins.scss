@@ -13,11 +13,11 @@
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
-  border: 2px solid $background;
+  border: 1px solid;
   padding: 0.25rem 1.2rem;
   border-radius: 8px;
-  box-shadow: 4px 4px 4px $background-dark;
+  box-shadow: 1px 1px 1px $label;
   background-color: $color;
-  color: $background-dark;
+  color: $background;
   text-transform: capitalize;
 }
