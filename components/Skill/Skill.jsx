@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Skill.scss";
 
-const definedValue = ["not yet given", "introduced", "capable", "independent"];
+const definedValue = ["not yet given", "introduced", "prompted", "independent"];
 
-const Skill = ({ skill, update, name }) => {
+const Skill = ({ currentValue, update, name }) => {
   const [edit, setEdit] = useState(false);
-  const [change, setChange] = useState(skill);
+  const [change, setChange] = useState(currentValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,44 +23,44 @@ const Skill = ({ skill, update, name }) => {
         onClick={() => setEdit(true)}
         className={`skill${edit ? ` skill__edit` : ``}`}
       >
-        {definedValue[skill]}
+        {definedValue[currentValue]}
       </span>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="skill__form">
-      <label>
-        not yet given
+      <label className="skill__label">
+        {definedValue[0]}
         <input
-          name={`${skill}`}
+          name={`${currentValue}`}
           type="radio"
           value={0}
           onClick={(e) => handleChange(e.target.value)}
         />
       </label>
-      <label>
-        introduced
+      <label className="skill__label">
+        {definedValue[1]}
         <input
-          name={`${skill}`}
+          name={`${currentValue}`}
           type="radio"
           value={1}
           onClick={(e) => handleChange(e.target.value)}
         />
       </label>
-      <label>
-        capable
+      <label className="skill__label">
+        {definedValue[2]}
         <input
-          name={`${skill}`}
+          name={`${currentValue}`}
           type="radio"
           value={2}
           onClick={(e) => handleChange(e.target.value)}
         />
       </label>
-      <label>
-        independent
+      <label className="skill__label">
+        {definedValue[3]}
         <input
-          name={`${skill}`}
+          name={`${currentValue}`}
           type="radio"
           value={3}
           onClick={(e) => handleChange(e.target.value)}

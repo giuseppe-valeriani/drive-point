@@ -25,8 +25,8 @@ const PupilsList = () => {
       <h2 className="pupils-list__title">Pupils List</h2>
       <ul className="pupils-list__list">
         {fetchedList.map((pupil) => (
-          <li className="pupils-list__element" key={pupil.id}>
-            <Link className="pupils-list__pupil" href={`/pupils/${pupil.id}`}>
+          <li className="pupils-list__element" key={pupil._id}>
+            <Link className="pupils-list__pupil" href={`/pupils/${pupil._id}`}>
               {pupil.name}
             </Link>
           </li>

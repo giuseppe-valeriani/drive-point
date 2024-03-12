@@ -6,7 +6,7 @@ import AddPupil from "@components/AddPupil/AddPupil";
 
 const Home = () => {
   return (
-    <main>
+    <main className="home">
       <h1 className="home__header">drive point</h1>
       <div className="home__main">
         <PupilsList />
