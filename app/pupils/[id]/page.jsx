@@ -43,12 +43,8 @@ const Pupil = ({ params }) => {
         <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
         {pupil.skills.map((skill) => (
           <article key={skill._id} className="pupil__skill">
-            <span className="pupil__label">{`${skill.skill}`}</span>
-            <Skill
-              update={update}
-              currentValue={skill.value}
-              name={`${skill.skill}`}
-            />
+            <span className="pupil__label">{`${skill.label}`}</span>
+            <Skill update={update} skill={skill} />
           </article>
         ))}
       </section>
