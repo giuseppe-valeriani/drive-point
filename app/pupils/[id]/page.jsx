@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.scss";
-import Note from "@components/Note/Note";
 import PersonHeader from "@components/PersonHeader/PersonHeader";
 import PersonSkills from "@components/PersonSkills/PersonSkills";
+import PersonPayments from "@components/PersonPayments/PersonPayments";
 
 const Pupil = ({ params }) => {
   const [pupil, setPupil] = useState(null);
@@ -44,8 +44,12 @@ const Pupil = ({ params }) => {
         showSkills={showSkills}
         setShowSkills={setShowSkills}
       />
-
-      <section className="pupil__block">
+      <PersonPayments
+        pupil={pupil}
+        showPayments={showPayments}
+        setShowPayments={setShowPayments}
+      />
+      {/* <section className="pupil__block">
         <button
           className="pupil__button"
           onClick={() => setShowPayments(!showPayments)}
@@ -57,7 +61,7 @@ const Pupil = ({ params }) => {
             <Note className="pupil__note" key={note._id} note={note} />
           ))}
         <div></div>
-      </section>
+      </section> */}
     </main>
   );
 };
