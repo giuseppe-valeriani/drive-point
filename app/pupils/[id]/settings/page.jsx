@@ -24,8 +24,11 @@ const page = ({ params }) => {
         </Link>
       </section>
       <section className="settings__content">
-        <h2 className="settings__subtitle">delete profile?</h2>
-        <button onClick={handleDelete} className="settings__button">
+        <h2 className="settings__subtitle">deleting profile</h2>
+        <button
+          onClick={handleDelete}
+          className="settings__button settings__button--delete"
+        >
           Delete
         </button>
       </section>

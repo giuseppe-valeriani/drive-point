@@ -1,0 +1,22 @@
+.note {
+  &__date {
+    // width: 50%;
+  }
+
+  &__amount {
+    font-weight: 600;
+  }
+
+  &__is-paid {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+
+    &--paid {
+      background-color: green;
+    }
+    &--unpaid {
+      background-color: red;
+    }
+  }
+}

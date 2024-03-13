@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Skill.scss";
 
-const definedValue = ["not yet given", "introduced", "prompted", "independent"];
+const definedValue = ["not given", "introduced", "prompted", "acquired"];
 
 const Skill = ({ update, skill }) => {
   const [edit, setEdit] = useState(false);

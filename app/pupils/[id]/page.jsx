@@ -1,13 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import axios from "axios";
 import "./style.scss";
-import Skill from "@components/Skill/Skill";
+import Note from "@components/Note/Note";
+import PersonHeader from "@components/PersonHeader/PersonHeader";
+import PersonSkills from "@components/PersonSkills/PersonSkills";
 
 const Pupil = ({ params }) => {
   const [pupil, setPupil] = useState(null);
+  const [showSkills, setShowSkills] = useState(false);
+  const [showPayments, setShowPayments] = useState(false);
 
   const getPupil = async () => {
     const response = await axios.get(`http://localhost:7777/${params.id}`);
@@ -32,24 +35,28 @@ const Pupil = ({ params }) => {
   }
 
   return (
-    <main>
-      <section className="pupil">
-        <Link href="/">
-          <img src={"/icons/home.png"} width={32} height={32} />
-        </Link>
-        <h1 className="pupil__title">{pupil.name}</h1>
-        <Link href={`/pupils/${params.id}/settings`}>
-          <img src={"/icons/settings.png"} width={32} height={32} />
-        </Link>
-      </section>
-      <section>
-        <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
-        {pupil.skills.map((skill) => (
-          <article key={skill._id} className="pupil__skill">
-            <span className="pupil__label">{`${skill.label}`}</span>
-            <Skill update={update} skill={skill} />
-          </article>
-        ))}
+    <main className="pupil">
+      <PersonHeader name={pupil.name} />
+      <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
+      <PersonSkills
+        pupil={pupil}
+        update={update}
+        showSkills={showSkills}
+        setShowSkills={setShowSkills}
+      />
+
+      <section className="pupil__block">
+        <button
+          className="pupil__button"
+          onClick={() => setShowPayments(!showPayments)}
+        >
+          Show Payments
+        </button>
+        {showPayments &&
+          pupil.payments.map((note) => (
+            <Note className="pupil__note" key={note._id} note={note} />
+          ))}
+        <div></div>
       </section>
     </main>
   );

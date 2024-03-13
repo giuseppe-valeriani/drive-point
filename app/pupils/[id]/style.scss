@@ -1,39 +1,13 @@
 @use "@styles/colors" as *;
+@use "@styles/mixins" as *;
 
 .pupil {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-
-  &__title {
-    text-transform: capitalize;
-    text-align: center;
-  }
 
   &__subtitle {
     text-transform: capitalize;
-    text-align: center;
-    font-size: 1.1rem;
-  }
-
-  &__skill {
-    background-color: $background-dark;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 30rem;
-    display: flex;
-    margin: 0.4rem auto;
-    padding: 1rem 2rem;
-    opacity: 0.7;
-    transition: 250ms;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &__label {
-    text-align: center;
-    width: 50%;
+    font-size: 1.2rem;
   }
 }
