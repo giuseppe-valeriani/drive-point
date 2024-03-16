@@ -1,6 +1,11 @@
 @use "@styles/colors" as *;
 
 .pupils-list {
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
   &__title {
     letter-spacing: 0.1rem;
   }

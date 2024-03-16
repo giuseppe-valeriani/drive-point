@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Link from "next/link";
+import axios from "axios";
+import AddPupil from "@components/AddPupil/AddPupil";
 import "./PupilsList.scss";
 
 const PupilsList = () => {
@@ -22,7 +23,12 @@ const PupilsList = () => {
 
   return (
     <section className="pupils-list">
-      <h2 className="pupils-list__title">Pupils List</h2>
+      <div className="pupils-list__divider">
+        <h2 className="pupils-list__title">Pupils List</h2>
+        <Link className="home__link" href="/pupils/add">
+          <AddPupil />
+        </Link>
+      </div>
       <ul className="pupils-list__list">
         {fetchedList.map((pupil) => (
           <li className="pupils-list__element" key={pupil._id}>

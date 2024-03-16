@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.scss";
-import PersonHeader from "@components/PersonHeader/PersonHeader";
+import Link from "next/link";
 import PersonSkills from "@components/PersonSkills/PersonSkills";
 import PersonPayments from "@components/PersonPayments/PersonPayments";
 
@@ -36,7 +36,15 @@ const Pupil = ({ params }) => {
 
   return (
     <main className="pupil">
-      <PersonHeader name={pupil.name} />
+      <section className="pupil__header">
+        <Link href="/">
+          <img src={"/icons/home.png"} width={32} height={32} />
+        </Link>
+        <h1 className="pupil__title">{pupil.name}</h1>
+        <Link href={`/pupils/${params.id}/settings`}>
+          <img src={"/icons/settings.png"} width={32} height={32} />
+        </Link>
+      </section>
       <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
       <PersonSkills
         pupil={pupil}
@@ -49,19 +57,6 @@ const Pupil = ({ params }) => {
         showPayments={showPayments}
         setShowPayments={setShowPayments}
       />
-      {/* <section className="pupil__block">
-        <button
-          className="pupil__button"
-          onClick={() => setShowPayments(!showPayments)}
-        >
-          Show Payments
-        </button>
-        {showPayments &&
-          pupil.payments.map((note) => (
-            <Note className="pupil__note" key={note._id} note={note} />
-          ))}
-        <div></div>
-      </section> */}
     </main>
   );
 };

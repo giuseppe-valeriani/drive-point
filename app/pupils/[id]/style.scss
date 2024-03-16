@@ -6,6 +6,16 @@
   flex-direction: column;
   align-items: center;
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__title {
+    text-transform: capitalize;
+    text-align: center;
+  }
+
   &__subtitle {
     text-transform: capitalize;
     font-size: 1.2rem;
