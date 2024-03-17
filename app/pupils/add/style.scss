@@ -2,6 +2,8 @@
 @use "@styles/mixins" as *;
 
 .add-pupil-page {
+  display: flex;
+  flex-direction: column;
   &__header {
     display: flex;
     align-items: center;

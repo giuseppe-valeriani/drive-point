@@ -21,10 +21,12 @@ const PersonPayments = ({ pupil, showPayments, setShowPayments }) => {
             <Note className="pupil__note" note={note} />
           </article>
         ))}
-      <article className="person-payments__total">
-        <div>Total</div>
-        <div>{`${total} £`}</div>
-      </article>
+      {showPayments && (
+        <article className="person-payments__total">
+          <div>Total</div>
+          <div>{`${total} £`}</div>
+        </article>
+      )}
     </section>
   );
 };
