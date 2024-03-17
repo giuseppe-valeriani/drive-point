@@ -2,10 +2,20 @@
 @use "@styles/colors" as *;
 
 .settings {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: auto;
+
   &__header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    margin: auto;
+    padding: 0 1rem;
+  }
+
+  &__icon-box {
+    margin-left: 2rem;
   }
 
   &__content {

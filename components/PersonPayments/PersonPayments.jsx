@@ -15,16 +15,19 @@ const PersonPayments = ({ pupil, showPayments, setShowPayments }) => {
       >
         Show Payments
       </button>
-      {showPayments &&
-        pupil.payments.map((note) => (
-          <article key={note._id} className="person-payments__article">
-            <Note className="pupil__note" note={note} />
-          </article>
-        ))}
       {showPayments && (
-        <article className="person-payments__total">
-          <div>Total</div>
-          <div>{`${total} £`}</div>
+        <article>
+          <div>
+            {pupil.payments.map((note) => (
+              <article key={note._id} className="person-payments__article">
+                <Note className="pupil__note" note={note} />
+              </article>
+            ))}
+          </div>
+          <div className="person-payments__total">
+            <div>Total</div>
+            <div>{`${total} £`}</div>
+          </div>
         </article>
       )}
     </section>

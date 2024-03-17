@@ -19,7 +19,7 @@ const page = ({ params }) => {
       <section className="settings__header">
         <div></div>
         <h1 className="settings__title">Settings</h1>
-        <Link href={`/pupils/${params.id}`}>
+        <Link href={`/pupils/${params.id}`} className="settings__icon-box">
           <img src={"/icons/confirm.png"} width={32} height={32} />
         </Link>
       </section>
