@@ -25,8 +25,8 @@ const PersonPayments = ({ pupil, showPayments, setShowPayments }) => {
             ))}
           </div>
           <div className="person-payments__total">
-            <div>Total</div>
-            <div>{`${total} £`}</div>
+            <div className="person-payments__label">Total</div>
+            <div className="person-payments__balance">{`£ ${total}`}</div>
           </div>
         </article>
       )}

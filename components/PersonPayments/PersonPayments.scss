@@ -16,14 +16,23 @@
 
   &__article {
     display: flex;
-    flex-direction: row;
     width: 20rem;
     justify-content: space-between;
   }
 
   &__total {
     display: flex;
-    justify-content: flex-end;
-    gap: 5rem;
+    width: 20rem;
+    justify-content: space-between;
+  }
+
+  &__label {
+    width: 50%;
+    font-weight: 600;
+  }
+
+  &__balance {
+    width: 40%;
+    font-weight: 600;
   }
 }
