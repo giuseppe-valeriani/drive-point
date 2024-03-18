@@ -2,10 +2,15 @@
 @use "@styles/mixins" as *;
 
 .add-pupil-page {
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   &__header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin: auto;
+    padding: 0 1rem;
   }
 
   &__icon-box {
