@@ -1,0 +1,14 @@
+@use "@styles/mixins" as *;
+
+.login {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin: 0.5rem;
+  }
+  &__button {
+    @include button;
+    // width: 5rem;
+  }
+}

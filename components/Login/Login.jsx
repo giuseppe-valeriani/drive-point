@@ -26,20 +26,22 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form className="login" onSubmit={handleLogin}>
       <input
+        className="login__input"
         type="text"
         name="user"
         value={user}
         onChange={(e) => setUser(e.target.value)}
       />
       <input
+        className="login__input"
         type="text"
         name="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button>Log In</button>
+      <button className="login__button">Log In</button>
     </form>
   );
 };

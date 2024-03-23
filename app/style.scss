@@ -2,10 +2,22 @@
   max-width: 1024px;
   margin: auto;
 
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
   &__header {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.1rem;
+  }
+
+  &__logout {
+    position: absolute;
+    right: 0;
   }
 
   &__main {

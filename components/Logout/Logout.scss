@@ -1,0 +1,6 @@
+@use "@styles/mixins" as *;
+
+.button {
+  @include button;
+  height: 2rem;
+}
