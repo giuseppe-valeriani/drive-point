@@ -2,23 +2,33 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useAuth } from "@contexts/AuthContext";
 import "./style.scss";
 import Link from "next/link";
 import PersonSkills from "@components/PersonSkills/PersonSkills";
 import PersonPayments from "@components/PersonPayments/PersonPayments";
 
 const Pupil = ({ params }) => {
+  const { authUser } = useAuth();
   const [pupil, setPupil] = useState(null);
   const [showSkills, setShowSkills] = useState(false);
   const [showPayments, setShowPayments] = useState(false);
 
   const getPupil = async () => {
-    const response = await axios.get(`http://localhost:7777/${params.id}`);
+    const response = await axios.get(`http://localhost:7777/${params.id}`, {
+      headers: {
+        Authorization: `Bearer ${authUser.token}`,
+      },
+    });
     setPupil(response.data);
   };
 
   const updatePupil = async (payload) => {
-    await axios.put(`http://localhost:7777/${params.id}`, payload);
+    await axios.put(`http://localhost:7777/${params.id}`, payload, {
+      headers: {
+        Authorization: `Bearer ${authUser.token}`,
+      },
+    });
     getPupil();
   };
 

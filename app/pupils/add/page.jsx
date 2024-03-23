@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useAuth } from "@contexts/AuthContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -8,10 +9,15 @@ import "./style.scss";
 import Form from "@components/Form/Form";
 
 const AddPupilPage = () => {
+  const { authUser } = useAuth();
   const router = useRouter();
 
   const addPupil = async (pupil) => {
-    await axios.post("http://localhost:7777/", pupil);
+    await axios.post("http://localhost:7777/", pupil, {
+      headers: {
+        Authorization: `Bearer ${authUser.token}`,
+      },
+    });
   };
 
   const formData = (data) => {
