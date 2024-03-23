@@ -1,17 +1,23 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useAuth } from "@contexts/AuthContext";
 import Link from "next/link";
 import axios from "axios";
 import AddPupil from "@components/AddPupil/AddPupil";
 import "./PupilsList.scss";
 
 const PupilsList = () => {
+  const { authUser } = useAuth();
   const [fetchedList, setFetchedList] = useState(null);
 
   useEffect(() => {
     const getList = async () => {
-      const response = await axios.get("http://localhost:7777/");
+      const response = await axios.get("http://localhost:7777/", {
+        headers: {
+          Authorization: `Bearer ${authUser.token}`,
+        },
+      });
       setFetchedList(response.data);
     };
     getList();

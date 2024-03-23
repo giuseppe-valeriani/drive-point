@@ -1,18 +1,18 @@
 "use client";
-import React, { useState } from "react";
-import "./style.scss";
+import { useAuth } from "../contexts/AuthContext";
 import Login from "@components/Login/Login";
 import PupilsList from "@components/PupilsList/PupilsList";
+import "./style.scss";
 
 const Home = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { authUser, isLoggedIn } = useAuth();
 
   if (!isLoggedIn) {
     return (
       <main className="home">
         <h1 className="home__header">drive point</h1>
         <div className="home__main">
-          <Login setIsLoggedIn={setIsLoggedIn} />
+          <Login />
         </div>
       </main>
     );
