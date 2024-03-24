@@ -1,24 +1,29 @@
 .home {
   max-width: 1024px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  &__nav {
+  &__logout {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 1rem;
+    gap: 0.5rem;
   }
 
   &__header {
     text-transform: uppercase;
-    text-align: center;
     letter-spacing: 0.1rem;
+    font-size: 1.6rem;
   }
 
-  &__logout {
-    position: absolute;
-    right: 0;
-  }
+  // &__logout {
+  //   position: absolute;
+  //   right: 0;
+  // }
 
   &__main {
     display: flex;

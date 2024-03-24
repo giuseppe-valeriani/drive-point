@@ -6,29 +6,24 @@ import "./style.scss";
 import Logout from "@components/Logout/Logout";
 
 const Home = () => {
-  const { authUser, isLoggedIn } = useAuth();
-
-  if (!isLoggedIn) {
-    return (
-      <main className="home">
-        <h1 className="home__header">drive point</h1>
-        <div className="home__main">
-          <Login />
-        </div>
-      </main>
-    );
-  }
+  const { isLoggedIn } = useAuth();
 
   return (
     <main className="home">
-      <div className="home__nav">
+      <div className="home__logout">
         <h1 className="home__header">drive point</h1>
-        <span className="home__logout">
-          <Logout />
-        </span>
+        <div>{isLoggedIn && <Logout />}</div>
       </div>
       <div className="home__main">
-        <PupilsList />
+        {isLoggedIn ? (
+          <>
+            <div className="home__main">
+              <PupilsList />
+            </div>
+          </>
+        ) : (
+          <Login />
+        )}
       </div>
     </main>
   );

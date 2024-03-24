@@ -6,10 +6,12 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+
   &__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin: auto;
+    gap: 0.5rem;
     padding: 0 1rem;
   }
   &__title {

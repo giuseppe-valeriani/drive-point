@@ -9,6 +9,7 @@
   }
   &__button {
     @include button;
-    // width: 5rem;
+    margin: auto;
+    width: 5rem;
   }
 }
