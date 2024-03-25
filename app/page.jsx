@@ -10,20 +10,10 @@ const Home = () => {
 
   return (
     <main className="home">
-      <div className="home__logout">
-        <h1 className="home__header">drive point</h1>
-        <div>{isLoggedIn && <Logout />}</div>
-      </div>
+      <h1 className="home__header">drive point</h1>
+      <div>{isLoggedIn && <Logout />}</div>
       <div className="home__main">
-        {isLoggedIn ? (
-          <>
-            <div className="home__main">
-              <PupilsList />
-            </div>
-          </>
-        ) : (
-          <Login />
-        )}
+        {isLoggedIn ? <PupilsList /> : <Login />}
       </div>
     </main>
   );

@@ -9,7 +9,7 @@ const PersonSkills = ({ pupil, update, showSkills, setShowSkills }) => {
         className="person-skills__button"
         onClick={() => setShowSkills(!showSkills)}
       >
-        Show Skills
+        show skills
       </button>
       {showSkills &&
         pupil.skills.map((skill) => (

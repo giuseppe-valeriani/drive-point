@@ -29,12 +29,7 @@ const PupilsList = () => {
 
   return (
     <section className="pupils-list">
-      <div className="pupils-list__divider">
-        <h2 className="pupils-list__title">Pupils List</h2>
-        <Link className="home__link" href="/pupils/add">
-          <AddPupil />
-        </Link>
-      </div>
+      <h2 className="pupils-list__title">Pupils List</h2>
       <ul className="pupils-list__list">
         {fetchedList.map((pupil) => (
           <li className="pupils-list__element" key={pupil._id}>
@@ -44,6 +39,9 @@ const PupilsList = () => {
           </li>
         ))}
       </ul>
+      <Link className="pupils-list__add" href="/pupils/add">
+        <AddPupil />
+      </Link>
     </section>
   );
 };

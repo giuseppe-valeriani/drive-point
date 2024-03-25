@@ -4,5 +4,7 @@
 .add-pupil {
   &__button {
     @include button;
+    margin: 1rem auto;
+    width: 5rem;
   }
 }

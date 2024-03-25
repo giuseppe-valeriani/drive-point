@@ -1,5 +1,5 @@
 import React from "react";
-import Note from "@components/Note/Note";
+import Payment from "@components/Payment/Payment";
 import "./PersonPayments.scss";
 
 const PersonPayments = ({ pupil, showPayments, setShowPayments }) => {
@@ -13,14 +13,17 @@ const PersonPayments = ({ pupil, showPayments, setShowPayments }) => {
         className="person-payments__button"
         onClick={() => setShowPayments(!showPayments)}
       >
-        Show Payments
+        show payments
       </button>
       {showPayments && (
         <article>
           <div>
-            {pupil.payments.map((note) => (
-              <article key={note._id} className="person-payments__article">
-                <Note className="pupil__note" note={note} />
+            {pupil.payments.map((payment) => (
+              <article key={payment._id} className="person-payments__article">
+                <Payment
+                  className="person-payments__payment"
+                  payment={payment}
+                />
               </article>
             ))}
           </div>

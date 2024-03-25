@@ -1,8 +1,8 @@
 import React from "react";
-import "./Note.scss";
+import "./Payment.scss";
 
-const Note = ({ note }) => {
-  const refactoredDate = note.date.split("/");
+const Payment = ({ payment }) => {
+  const refactoredDate = payment.date.split("/");
   const fullDate = new Date(
     refactoredDate[2],
     refactoredDate[1],
@@ -15,15 +15,15 @@ const Note = ({ note }) => {
   const year = fullDate.getFullYear();
   return (
     <>
-      <div className="note__date">{`${daysArray[dayOfWeek]}, ${day}/${month}/${year}`}</div>
-      <div className="note__amount">{`£ ${note.amount}`}</div>
+      <div className="payment__date">{`${daysArray[dayOfWeek]}, ${day}/${month}/${year}`}</div>
+      <div className="payment__amount">{`£ ${payment.amount}`}</div>
       <button
-        className={`note__is-paid ${
-          note.isPaid ? `note__is-paid--paid` : `note__is-paid--unpaid`
+        className={`payment__is-paid ${
+          payment.isPaid ? `payment__is-paid--paid` : `payment__is-paid--unpaid`
         }`}
       ></button>
     </>
   );
 };
 
-export default Note;
+export default Payment;

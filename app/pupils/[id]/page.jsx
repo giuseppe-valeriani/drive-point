@@ -5,12 +5,14 @@ import axios from "axios";
 import { useAuth } from "@contexts/AuthContext";
 import "./style.scss";
 import Link from "next/link";
+import PersonNotes from "@components/PersonNotes/PersonNotes";
 import PersonSkills from "@components/PersonSkills/PersonSkills";
 import PersonPayments from "@components/PersonPayments/PersonPayments";
 
 const Pupil = ({ params }) => {
   const { authUser } = useAuth();
   const [pupil, setPupil] = useState(null);
+  const [showNotes, setShowNotes] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
   const [showPayments, setShowPayments] = useState(false);
 
@@ -56,6 +58,11 @@ const Pupil = ({ params }) => {
         </Link>
       </section>
       <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
+      <PersonNotes
+        pupil={pupil}
+        showNotes={showNotes}
+        setShowNotes={setShowNotes}
+      />
       <PersonSkills
         pupil={pupil}
         update={update}
