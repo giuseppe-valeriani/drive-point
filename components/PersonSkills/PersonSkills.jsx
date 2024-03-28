@@ -2,7 +2,12 @@ import React from "react";
 import Skill from "@components/Skill/Skill";
 import "./PersonSkills.scss";
 
-const PersonSkills = ({ pupil, update, showSkills, setShowSkills }) => {
+const PersonSkills = ({
+  pupil,
+  handleUpdateSkills,
+  showSkills,
+  setShowSkills,
+}) => {
   return (
     <section className="person-skills">
       <button
@@ -15,7 +20,7 @@ const PersonSkills = ({ pupil, update, showSkills, setShowSkills }) => {
         pupil.skills.map((skill) => (
           <article key={skill._id} className="person-skills__article">
             <span className="person-skills__label">{`${skill.label}`}</span>
-            <Skill update={update} skill={skill} />
+            <Skill handleUpdateSkills={handleUpdateSkills} skill={skill} />
           </article>
         ))}
     </section>

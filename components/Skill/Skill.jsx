@@ -3,13 +3,13 @@ import "./Skill.scss";
 
 const definedValue = ["not given", "introduced", "prompted", "acquired"];
 
-const Skill = ({ update, skill }) => {
+const Skill = ({ handleUpdateSkills, skill }) => {
   const [edit, setEdit] = useState(false);
   const [change, setChange] = useState(skill.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    update(skill.skill, change);
+    handleUpdateSkills(skill.skill, change);
     setEdit(false);
   };
 

@@ -25,7 +25,7 @@ const Pupil = ({ params }) => {
     setPupil(response.data);
   };
 
-  const updatePupil = async (payload) => {
+  const updateSkills = async (payload) => {
     await axios.put(`http://localhost:7777/${params.id}`, payload, {
       headers: {
         Authorization: `Bearer ${authUser.token}`,
@@ -34,8 +34,21 @@ const Pupil = ({ params }) => {
     getPupil();
   };
 
-  const update = (name, value) => {
-    updatePupil({ skill: name, value: value });
+  const updateNotes = async (payload) => {
+    await axios.put(`http://localhost:7777/${params.id}/notes`, payload, {
+      headers: {
+        Authorization: `Bearer ${authUser.token}`,
+      },
+    });
+    getPupil();
+  };
+
+  const handleUpdateSkills = (name, value) => {
+    updateSkills({ skill: name, value: value });
+  };
+
+  const handleUpdateNotes = (notes) => {
+    updateNotes({ notes: notes });
   };
 
   useEffect(() => {
@@ -60,12 +73,13 @@ const Pupil = ({ params }) => {
       <h2 className="pupil__subtitle">started on {pupil.starting_date}</h2>
       <PersonNotes
         pupil={pupil}
+        handleUpdateNotes={handleUpdateNotes}
         showNotes={showNotes}
         setShowNotes={setShowNotes}
       />
       <PersonSkills
         pupil={pupil}
-        update={update}
+        handleUpdateSkills={handleUpdateSkills}
         showSkills={showSkills}
         setShowSkills={setShowSkills}
       />
