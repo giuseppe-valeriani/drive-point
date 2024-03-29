@@ -2,15 +2,21 @@
 
 import React from "react";
 import Link from "next/link";
+import { useAuth } from "@contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import "./style.scss";
 
 const page = ({ params }) => {
+  const { authUser } = useAuth();
   const router = useRouter();
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:7777/${params.id}`);
+    await axios.delete(`http://localhost:7777/${params.id}`, {
+      headers: {
+        Authorization: `Bearer ${authUser.token}`,
+      },
+    });
     router.push("/");
   };
 
